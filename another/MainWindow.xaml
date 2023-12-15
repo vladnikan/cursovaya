@@ -1,0 +1,50 @@
+﻿<Window x:Class="AudioPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AudioPlayer"
+        mc:Ignorable="d"
+        Title="AudioPlayer" Height="550" Width="600">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/5d9e62d6f20658e7baa09ddc989409e3 копия.jpg"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Name="PlayButton" Content="▶" Click="PlayButton_Click" Margin="284,419,273,44" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+        <Button Name="PauseButton" Content="⏸️" Click="PauseButton_Click" Margin="228,419,332,44" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+        <Button Name="StopButton" Content="Stop" Click="StopButton_Click" Margin="345,419,210,44" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+        <Button Name="RemoveButton" Content="Remove Track" Click="RemoveButton_Click" Margin="10,419,499,48" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+        <ListBox Name="PlaylistListBox" Grid.Row="1" Margin="10,43,10,110" SelectionChanged="PlaylistListBox_SelectionChanged" BorderBrush="#FFFF7700" FontFamily="Bahnschrift" Foreground="White">
+            <ListBox.Background>
+                <SolidColorBrush Color="#FFA53C41" Opacity="0.7"/>
+            </ListBox.Background>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}" ToolTip="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Name="LoadFilesButton" Content="Load Files" Click="LoadFilesButton_Click" Margin="89,6,393,7" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28"/>
+        <Button Name="SavePlaylistButton" Content="Save Playlist" Click="SavePlaylistButton_Click" Margin="241,7,241,7" BorderBrush="#FFFE7C28" Foreground="#FFFE7C28" Background="#FF4F4D4D"/>
+        <Button Name="OpenPlaylistButton" Content="Open Playlist" Click="OpenPlaylistButton_Click" Margin="395,6,87,7" BorderBrush="#FFFE7C28" Foreground="#FFFE7C28" Background="#FF4F4D4D" RenderTransformOrigin="0.502,-0.122">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Slider Name="TimelineSlider" Grid.Row="1" Minimum="0" Maximum="100" ValueChanged="TimelineSlider_ValueChanged" Margin="10,384,10,98" 
+        BorderBrush="#FFB700FF" Background="#FF4F4D4D" Foreground="#FFB700FF"/>
+        <TextBox Name="searchTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Margin="0,10,0,0" TextChanged="SearchTextBox_TextChanged" Grid.Row="1"/>
+
+
+    </Grid>
+</Window>
