@@ -7,6 +7,7 @@ namespace AudioPlayer
 {
     public class FileIO
     {
+        //открытие файлов
         public static List<string> OpenFiles()
         {
             List<string> files = new List<string>();
@@ -22,7 +23,7 @@ namespace AudioPlayer
 
             return files;
         }
-
+        //сохранение плейлиста
         public static void SavePlaylist(List<string> playlist)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -34,7 +35,7 @@ namespace AudioPlayer
                 MessageBox.Show("Playlist successfully saved");
             }
         }
-
+        //открытие плейлиста
         public static List<string> OpenPlaylist()
         {
             List<string> playlist = new List<string>();
