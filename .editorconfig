@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS2001: Не удалось найти исходный файл "C:\Users\nikan\source\repos\another\cursovaya\another\Playlist.cs".
+dotnet_diagnostic.CS2001.severity = none

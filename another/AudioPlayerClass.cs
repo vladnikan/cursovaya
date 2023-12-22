@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
+using Microsoft.VisualBasic;
 
 
 namespace AudioPlayer
@@ -45,12 +46,12 @@ namespace AudioPlayer
             audioPlayer.Close();
             audioPlayer = new MediaPlayer();
         }
-
+        //загрузка плейлиста
         public void LoadPlaylist(List<string> files)
         {
             playlist.AddRange(files);
         }
-
+        //воспроизведение выбранного трека по индексу
         public void PlaySelectedTrack(int selectedIndex)
         {
             if (selectedIndex != -1)
@@ -59,12 +60,12 @@ namespace AudioPlayer
                 audioPlayer.Play();
             }
         }
-
+        //получение плейлиста
         public List<string> GetPlaylist()
         {
             return playlist;
         }
-
+        //удаление трека из плейлиста по индексу
         public void RemoveTrack(int selectedIndex)
         {
             if (selectedIndex != -1)
@@ -78,7 +79,7 @@ namespace AudioPlayer
                 playlist.RemoveAt(selectedIndex);
             }
         }
-
+        // Перемотка песни 
         public void Seek(TimeSpan position)
         {
             audioPlayer.Position = position;

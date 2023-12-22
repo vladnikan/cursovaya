@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AudioPlayer"
+        ResizeMode="NoResize"
         mc:Ignorable="d"
         Title="AudioPlayer" Height="550" Width="600">
     <Grid>
@@ -14,12 +15,16 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Button Name="PlayButton" Content="▶" Click="PlayButton_Click" Margin="284,420,273,29" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+        <!-- Добавьте кнопку EditButton в разметку -->
+        <Button Name="EditButton" Content="Edit Track" Click="EditButton_Click" Margin="494,420,15,29" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
 
-        <Button Name="PlayButton" Content="▶" Click="PlayButton_Click" Margin="284,419,273,44" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
-        <Button Name="PauseButton" Content="⏸️" Click="PauseButton_Click" Margin="228,419,332,44" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
-        <Button Name="StopButton" Content="Stop" Click="StopButton_Click" Margin="345,419,210,44" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
-        <Button Name="RemoveButton" Content="Remove Track" Click="RemoveButton_Click" Margin="10,419,499,48" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
-        <ListBox Name="PlaylistListBox" Grid.Row="1" Margin="10,43,10,110" SelectionChanged="PlaylistListBox_SelectionChanged" BorderBrush="#FFFF7700" FontFamily="Bahnschrift" Foreground="White">
+        <Button Name="PauseButton" Content="⏸️" Click="PauseButton_Click" Margin="228,420,332,29" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+        <Button Name="StopButton" Content="Stop" Click="StopButton_Click" Margin="345,420,210,29" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+        <Button Name="RemoveButton" Content="Remove Track" Click="RemoveButton_Click" Margin="10,420,499,29" BorderBrush="#FFFE7C28" Background="#FF4F4D4D" Foreground="#FFFE7C28" Grid.Row="1"/>
+
+        <ListBox Name="PlaylistListBox" Grid.Row="1" Margin="10,33,10,110" SelectionChanged="PlaylistListBox_SelectionChanged" BorderBrush="#FFFF7700" FontFamily="Bahnschrift" Foreground="White">
+            
             <ListBox.Background>
                 <SolidColorBrush Color="#FFA53C41" Opacity="0.7"/>
             </ListBox.Background>
@@ -41,10 +46,8 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Slider Name="TimelineSlider" Grid.Row="1" Minimum="0" Maximum="100" ValueChanged="TimelineSlider_ValueChanged" Margin="10,384,10,98" 
-        BorderBrush="#FFB700FF" Background="#FF4F4D4D" Foreground="#FFB700FF"/>
+        <Slider Name="TimelineSlider" Grid.Row="1" Minimum="0" Maximum="100" ValueChanged="TimelineSlider_ValueChanged" Margin="10,384,10,61" 
+        BorderBrush="#FFB700FF"   Foreground="Orange"/>
         <TextBox Name="searchTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Margin="0,10,0,0" TextChanged="SearchTextBox_TextChanged" Grid.Row="1"/>
-
-
     </Grid>
 </Window>
